@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {useEffect} from "react";
+import { useEffect } from "react";
 
 const store = window.electron.store;
 
@@ -21,6 +21,10 @@ function App() {
     saveToStorage();
     console.log("Saved to electron-store")
   }, []);
+
+  useEffect(() => {
+    console.log(store.get("name"));
+  })
 
   return (
     <div className="App">

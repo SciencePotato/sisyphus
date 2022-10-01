@@ -1,5 +1,5 @@
-const { ipcMain, ipcRenderer, BrowserWindow, app, contextBridge } = require('electron');
 const Store = require('electron-store');
+const { BrowserWindow, app, ipcMain } = require('electron');
 
 const path = require('path');
 const url = require('url');
@@ -8,23 +8,19 @@ const url = require('url');
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
-const store = new Store();
-
-store.set('unicorn', '🦄');
-console.log(store.get('unicorn'));
-//=> '🦄'
-
-// Use dot-notation to access nested properties
-store.set('foo.bar', true);
-console.log(store.get('foo'));
-//=> {bar: true}
-
-console.log('store', store.get('test'));
-
 function createWindow() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 800, height: 600});
+    mainWindow = new BrowserWindow(
+        {
+            width: 800,
+            height: 600,
+            webPreferences: {
+                preload: path.join(__dirname, 'preload.js'),
+            },
+        }
+    );
 
+    console.log("Path", path.join(__dirname, 'preload.js'));
     // and load the index.html of the app.
     mainWindow.loadURL('http://localhost:3000');
 
@@ -65,24 +61,12 @@ app.on('activate', function () {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-contextBridge.exposeInMainWorld('electron', {
-    store: {
-        get(key) {
-            return ipcRenderer.sendSync('electron-store-get', key);
-        },
-        set(property, val) {
-            ipcRenderer.send('electron-store-set', property, val);
-        },
-        // Other method you want to add like has(), reset(), etc.
-    },
-    // Any other methods you want to expose in the window object.
-    // ...
-});
+const store = new Store();
 
+// IPC listener
 ipcMain.on('electron-store-get', async (event, val) => {
     event.returnValue = store.get(val);
 });
-
 ipcMain.on('electron-store-set', async (event, key, val) => {
     store.set(key, val);
 });
