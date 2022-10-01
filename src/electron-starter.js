@@ -1,14 +1,5 @@
-try {
-    require('electron-reloader')(module)
-} catch (_) {
-
-}
-
-const electron = require('electron');
-// Module to control application life.
-const app = electron.app;
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow;
+const { ipcMain, ipcRenderer, BrowserWindow, app, contextBridge } = require('electron');
+const Store = require('electron-store');
 
 const path = require('path');
 const url = require('url');
@@ -16,6 +7,19 @@ const url = require('url');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
+
+const store = new Store();
+
+store.set('unicorn', '🦄');
+console.log(store.get('unicorn'));
+//=> '🦄'
+
+// Use dot-notation to access nested properties
+store.set('foo.bar', true);
+console.log(store.get('foo'));
+//=> {bar: true}
+
+console.log('store', store.get('test'));
 
 function createWindow() {
     // Create the browser window.
@@ -60,3 +64,25 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+contextBridge.exposeInMainWorld('electron', {
+    store: {
+        get(key) {
+            return ipcRenderer.sendSync('electron-store-get', key);
+        },
+        set(property, val) {
+            ipcRenderer.send('electron-store-set', property, val);
+        },
+        // Other method you want to add like has(), reset(), etc.
+    },
+    // Any other methods you want to expose in the window object.
+    // ...
+});
+
+ipcMain.on('electron-store-get', async (event, val) => {
+    event.returnValue = store.get(val);
+});
+
+ipcMain.on('electron-store-set', async (event, key, val) => {
+    store.set(key, val);
+});
