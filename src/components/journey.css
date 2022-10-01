@@ -1,0 +1,12 @@
+.journey {
+  display: block !important;
+  margin: 3rem;
+
+}
+
+.journey > h1 {
+  margin: 0;
+
+  font-size: 3rem;
+  border-bottom: 5px solid black;
+}
