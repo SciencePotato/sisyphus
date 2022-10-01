@@ -32,6 +32,11 @@
     min-width: 500px;
 }
 
+.topDisplay > div:first-of-type {
+    display: grid;
+    place-items: center;
+}
+
 img { 
     width: 80%;
 }

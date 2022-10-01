@@ -1,0 +1,46 @@
+:root {
+    --primaryColor: #000000;
+    --contrastColor: #FFFFFF;
+    --accentColor: #FF3939;
+    position: relative;
+}
+
+textarea {
+    resize: none;
+    margin: 1rem 0rem;
+    min-width: 400px;
+    min-height: 100px;
+    border-radius: 0.5rem;
+    border: solid 2px var(--primaryColor);
+    padding: 1rem;
+}
+
+.createGoal {
+    text-align: right;
+}
+
+.createGoal > h1 {
+    margin: 0px;
+    font-size: 6rem;
+}
+
+.createGoal > h3 {
+    margin: 0px;
+    font-size: 2.5rem;
+}
+
+.createGoal > button {
+    padding: 1rem 4rem;
+    font-size: 1.25rem;
+    background-color: var(--primaryColor);
+    color: var(--contrastColor);
+    font-family: 'Langar', cursive;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all ease-out 0.25s;
+}
+
+.createGoal > button:hover {
+    color: var(--primaryColor);
+    background-color: var(--contrastColor);
+}

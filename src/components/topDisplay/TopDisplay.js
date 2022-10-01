@@ -14,8 +14,8 @@ function TopDisplay() {
                 <img src={manBall}/>
             </div>
             <div>
-                <GoalPoint/>
-                {/* <CreateGoal/> */}
+                {/* <GoalPoint/> */}
+                <CreateGoal/>
             </div>
         </div>
     </>
