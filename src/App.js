@@ -1,30 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
-import { useEffect } from "react";
-
-const store = window.electron.store;
+import {useEffect, useState} from "react";
+import { useHabit } from "./components/storage/HabitContext";
 
 function App() {
+  const habitContext = useHabit();
 
-  const saveToStorage = (e, number = 19) => {
-    if (e) {
-      console.log(e);
-    } else {
-      // send the data i want to send as a string
-      store.set("name", "Deyby Rodriguez");
-      store.set("age", number);
-    }
-  };
+  const [habitData, setHabitData] = useState();
 
   useEffect(() => {
-    console.log(store.get('unicorn'))
-    saveToStorage();
-    console.log("Saved to electron-store")
+    console.log("Set contents of store")
+    habitContext.setHabitData(0);
+    habitContext.addActivity();
+    habitContext.addActivity();
+    habitContext.addActivity();
+    habitContext.addActivity();
+    habitContext.addActivity();
+    habitContext.addActivity();
+
+    const data = habitContext.getHabitData(0);
+    console.log("Fetched contents of store");
+    console.log(data);
+    console.log(habitContext.getProgress());
   }, []);
-
-  useEffect(() => {
-    console.log(store.get("name"));
-  })
 
   return (
     <div className="App">
