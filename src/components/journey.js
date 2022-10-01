@@ -35,7 +35,7 @@ const Journey = () => {
       <h1>Journey</h1>
       <div className="records-list">
         {test_data.map(({title, date, description}) => 
-          <RecordCard title={title} date={date} description={description} />
+          <RecordCard title={title} date={date} description={description} key={Math.random()}/>
         )}
       </div>
     </div>
