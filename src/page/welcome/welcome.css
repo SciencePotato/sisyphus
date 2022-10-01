@@ -42,7 +42,7 @@
 .welcome > div:last-of-type {
     display: grid;
     place-items: center right;
-    padding-right: min(5rem, 20%);
+    padding-right: 7.5rem;
     text-align: right;
 }
 
@@ -80,4 +80,8 @@
 
 img {
     width: 95%;
+}
+
+.move-Out{
+    transform: translateY(-100%);
 }

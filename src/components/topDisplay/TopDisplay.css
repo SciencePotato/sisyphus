@@ -1,0 +1,30 @@
+:root {
+    --primaryColor: #000000;
+    --contrastColor: #FFFFFF;
+    --accentColor: #FF3939;
+    position: relative;
+}
+
+.clog {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.clog > svg {
+    transition: all ease-out 0.25s;
+}
+
+.clog > svg:hover {
+    transform: rotateZ(90deg);
+}
+
+.topDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.topDisplay > div {
+    min-width: 400px;
+}
