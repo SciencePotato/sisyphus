@@ -1,0 +1,23 @@
+.record-card {
+  height: auto;
+  display: grid !important;
+  grid-template-columns: 10rem auto;
+
+  padding: 1rem;
+  border-bottom: 2px dotted black;
+}
+
+.record-card-date > h1{
+  margin: 0;
+  font-size: 3.5rem;
+}
+
+.record-card-date > h2{
+  margin: 0;
+}
+
+.record-card > p {
+  display: block;
+  text-align: left;
+  font-size: 1.2rem;
+}

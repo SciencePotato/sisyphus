@@ -1,0 +1,20 @@
+:root {
+    --primaryColor: #000000;
+    --contrastColor: #FFFFFF;
+    --accentColor: #FF3939;
+    position: relative;
+}
+
+.goalPoint {
+    text-align: right;
+}
+
+.goalPoint > h1 {
+    margin: 0px;
+    font-size: 6rem;
+}
+
+.goalPoint > h3 {
+    margin: 0px;
+    font-size: 2.5rem;
+}

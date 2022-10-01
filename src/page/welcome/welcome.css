@@ -1,0 +1,87 @@
+:root {
+    --primaryColor: #000000;
+    --contrastColor: #FFFFFF;
+    --accentColor: #FF3939;
+    position: relative;
+}
+
+.welcome-padding {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--contrastColor);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome{
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome > div {
+    position: relative;
+    flex: 1;   
+    height: 80%;
+    width: 80%;
+    min-width: 400px;
+    max-width: 1200px;
+    padding: 3rem;
+}
+
+.welcome > div:first-of-type{
+    display: grid;
+    place-items: start end;
+}
+
+.welcome > div:last-of-type {
+    display: grid;
+    place-items: center right;
+    padding-right: 7.5rem;
+    text-align: right;
+}
+
+.welcome > div:last-of-type > div > h1 {
+    font-size: 5rem;
+    margin: 0px;
+}
+
+.welcome > div:last-of-type > div >  h3 {
+    font-size: 1.5rem;
+    margin-top: 0px;
+}
+
+.welcome > div:last-of-type > div >  p {
+    font-size: 1.25rem;
+}
+
+.welcome > div:last-of-type > div > button {
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+    color: var(--contrastColor);
+    background-color: var(--primaryColor);
+    font-family: 'Langar', cursive;
+    border-radius: 0.5rem;
+    border: solid 4px var(--primaryColor);
+    cursor: pointer;
+    transition: all ease-out 0.25s;
+}
+
+.welcome > div:last-of-type > div > button:hover {
+    background-color: var(--contrastColor);
+    color: var(--primaryColor);
+}
+
+img {
+    width: 95%;
+}
+
+.move-Out{
+    transform: translateY(-100%);
+}
