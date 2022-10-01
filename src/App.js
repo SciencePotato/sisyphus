@@ -1,10 +1,12 @@
 import './App.css';
 import Loader from './page/loader/Loader.js';
+import Welcome from './page/welcome/Welcome.js';
 
 function App() {
   return (
     <div className="App">
-      <Loader/>
+      <Welcome/>
+      {/* <Loader/> */}
       <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.
