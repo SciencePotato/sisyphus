@@ -7,7 +7,7 @@ function CreateGoal({todayDate, height}) {
             <h1>{height.toFixed(3)} ft</h1>
             <h3>{todayDate}</h3>
             <div>
-                <textarea></textarea>
+                <textarea placeholder='say somethinggggg'></textarea>
             </div>
             <button>Record Today</button>
         </div>
