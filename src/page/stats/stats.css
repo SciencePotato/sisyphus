@@ -1,0 +1,44 @@
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats-date {
+    font-size: 4rem;
+}
+
+.stats > div {
+    flex: 1;
+    padding: 2rem;
+    min-width: 500px;
+    display: grid;
+    place-items: center;
+}
+
+.stats > div:last-of-type {
+    place-items: center end;
+}
+
+.stats > div:first-of-type > div > h1 {
+    margin: 0px;
+    font-size: 6rem;
+}
+
+.stats > div:first-of-type > div > h2 {
+    margin: 0px;
+    font-size: 2rem;
+}
+
+.stats > div:first-of-type > div > h3 {
+    margin: 0px;
+    font-size: 1.5rem;
+}
+
+img {
+    width: 85%;
+}
