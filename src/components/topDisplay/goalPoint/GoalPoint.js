@@ -1,12 +1,12 @@
 import './GoalPoint.css';
 
-function GoalPoint() {
+function GoalPoint({todayDate, height, deltaHeight}) {
   return (
     <>
         <div className='goalPoint'>
-            <h3>+0.210 ft</h3>
-            <h1>21.208 ft</h1>
-            <h3>24 Sep 2022</h3>
+            <h3>+{deltaHeight.toFixed(3)} ft</h3>
+            <h1>{height.toFixed(3)} ft</h1>
+            <h3>{todayDate}</h3>
         </div>
     </>
   );
