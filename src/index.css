@@ -7,8 +7,8 @@
 }
 
 ::selection {
-  background-color: var(--contrastColor);
-  color: var(--accentColor);
+  color: var(--contrastColor);
+  background-color: var(--accentColor);
 }
 
 body {
