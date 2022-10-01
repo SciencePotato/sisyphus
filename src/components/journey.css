@@ -1,7 +1,9 @@
 .journey {
   display: block !important;
   margin: 3rem;
-
+  width: 1000px;
+  margin: auto;
+  margin-top: 2rem;
 }
 
 .journey > h1 {

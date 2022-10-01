@@ -1,5 +1,7 @@
 import './TopDisplay.css';
 import manBall from './../../images/manball_2.png';
+import GoalPoint from './goalPoint/GoalPoint.js';
+import CreateGoal from './createGoal/CreateGoal.js';
 
 function TopDisplay() {
   return (
@@ -12,7 +14,8 @@ function TopDisplay() {
                 <img src={manBall}/>
             </div>
             <div>
-                Hello
+                <GoalPoint/>
+                {/* <CreateGoal/> */}
             </div>
         </div>
     </>

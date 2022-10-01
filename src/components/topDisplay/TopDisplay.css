@@ -6,8 +6,11 @@
 }
 
 .clog {
-    padding: 1rem;
+    padding: 1rem 3rem;
     cursor: pointer;
+    margin: auto;
+    max-width: 1200px;
+    margin-top: 2rem;
 }
 
 .clog > svg {
@@ -26,5 +29,9 @@
 }
 
 .topDisplay > div {
-    min-width: 400px;
+    min-width: 500px;
+}
+
+img { 
+    width: 80%;
 }
