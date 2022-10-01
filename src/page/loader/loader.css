@@ -37,3 +37,8 @@
 .move-Out{
     transform: translateY(-100%);
 }
+
+.ball-start {
+    animation: rotation 100s infinite linear;
+
+}

@@ -6,8 +6,12 @@ import Welcome from './page/welcome/Welcome.js';
 import TopDisplay from './components/topDisplay/TopDisplay.js'
 import Journey from './components/journey';
 import Stats from './page/stats/Stats';
+import {HashRouter,Link,Route,Routes} from "react-router-dom";
+import Homepage from './page/homepage/homepage';
+import { useEffect, useState } from 'react';
 
 function App() {
+
   const habitContext = useHabit();
 
   const [habitData, setHabitData] = useState();
@@ -29,13 +33,17 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {/* <Welcome/> */}
-      {/* <Loader/> */}
-      {/* <TopDisplay/>
-      <Journey/> */}
-      <Stats/>
-    </div>
+    <HashRouter>
+      <div className="App">
+
+        <Routes>
+          <Route exact path="/" element={<Homepage />} />
+          <Route exact path="/stats" element={<Stats />} />
+        </Routes> 
+
+      </div>
+      
+    </HashRouter>
   );
 }
 

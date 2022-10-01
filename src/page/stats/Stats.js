@@ -1,10 +1,12 @@
 import './stats.css'
 import manBall from './../../images/manball_1.png'
+import { Link } from 'react-router-dom';
 
 function Stats() {
   return (
     <>
         <div className='stats'>
+            <Link to="/"><p>Go back</p></Link>
             <div>
                 <div>
                     <h2> You already climbed: </h2>
