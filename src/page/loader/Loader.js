@@ -4,7 +4,7 @@ import ball from './../../images/ball.png'
 function Loader() {
   return (
     <>
-      <div className="loader">
+      <div className="loader" id='loader'>
         <div>
             <img className='ball-start' src={ball}></img>
         </div>
