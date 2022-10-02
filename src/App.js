@@ -1,5 +1,4 @@
 import './App.css';
-import {useEffect, useState} from "react";
 import { useHabit } from "./components/storage/HabitContext";
 import Loader from './page/loader/Loader.js';
 import Welcome from './page/welcome/Welcome.js';
