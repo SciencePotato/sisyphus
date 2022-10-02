@@ -62,13 +62,7 @@ const userHabitContext = createContext({
     },
 
     isFirstTimeUser: function () {
-        if(!store.get("existingUser")) {
-            console.log("User is a first time user");
-            return false;
-        }
-        else {
-            return true;
-        }
+        return store.get("existingUser");
     },
 
     setExistingUserStatus: function (status) {
