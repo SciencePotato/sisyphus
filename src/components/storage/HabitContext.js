@@ -81,7 +81,8 @@ const userHabitContext = createContext({
     },
 
     setUserLoggedInToday: function (status) {
-        return store.set("loggedInToday", status);
+        store.set("loggedInToday", status);
+        return store.get("loggedInToday");
     }
 })
 

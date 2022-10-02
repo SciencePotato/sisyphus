@@ -24,6 +24,7 @@ function CreateGoal() {
     const submitHandler = (e) => {
         e.preventDefault();
         habitContext.addActivity(description, "");
+        habitContext.setUserLoggedInToday(true);
         setDescription("");
         navigate(0);
     }

@@ -14,19 +14,6 @@ function TopDisplay() {
     const [activities, setActivities] = useState([]);
     const [recordedToday, setRecordedToday] = useState(false);
 
-    const setLoginStatus = () => {
-        const today = new Date();
-        const todayDate = String(today.getDate()).padStart(2, '0');
-
-        if(activities.length === 0) {
-            return false;
-        }
-
-        const activityDate = activities[activities.length - 1].date.slice(8, 10);
-
-        return activityDate === todayDate;
-    }
-
     useEffect(() => {
         setDeltaHeight(habitContext.getDeltaHeight());
         setActivities(habitContext.getActivities());
