@@ -42,6 +42,7 @@ const userHabitContext = createContext({
         store.set(`habit${id}.id`, this.id);
         store.set(`habit${id}.activities`, this.activities);
         store.set(`habit${id}.deltaHeight`, this.deltaHeight);
+        store.set("loggedInToday", false);
 
         return this;
     },
@@ -56,6 +57,7 @@ const userHabitContext = createContext({
         this.activities = [...this.activities, activity];
         store.set(`habit${this.id}.activities`, this.activities);
         store.set(`habit${this.id}.deltaHeight`, activity.progressVal);
+        store.set("loggedInToday", true);
         this.deltaHeight = activity.progressVal;
 
         return activity;
@@ -72,6 +74,14 @@ const userHabitContext = createContext({
 
     getUserCreationDate: function () {
         return store.get("userCreationDate");
+    },
+
+    userLoggedInToday: function () {
+        return store.get("loggedInToday");
+    },
+
+    setUserLoggedInToday: function (status) {
+        return store.set("loggedInToday", status);
     }
 })
 

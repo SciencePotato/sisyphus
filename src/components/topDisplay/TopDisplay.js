@@ -30,8 +30,7 @@ function TopDisplay() {
     useEffect(() => {
         setDeltaHeight(habitContext.getDeltaHeight());
         setActivities(habitContext.getActivities());
-        setRecordedToday(setLoginStatus());
-        console.log("Recorded today?", recordedToday);
+        setRecordedToday(habitContext.userLoggedInToday());
 
     }, [habitContext]);
 
