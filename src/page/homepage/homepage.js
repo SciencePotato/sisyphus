@@ -12,6 +12,8 @@ const Homepage = () => {
   const [isExisting, setIsExisting] = useState(false);
 
   useEffect(() => {
+      setIsExisting(habitContext.isFirstTimeUser());
+  }, []);
     setIsExisting(habitContext.isFirstTimeUser());
     setIsExisting(false);
   }, [])
