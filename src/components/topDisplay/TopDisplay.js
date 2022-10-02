@@ -4,8 +4,33 @@ import ball from './../../images/ball.png';
 import GoalPoint from './goalPoint/GoalPoint.js';
 import CreateGoal from './createGoal/CreateGoal.js';
 import { Link } from 'react-router-dom';
+import { useHabit } from '../storage/HabitContext';
+import {useEffect, useState} from "react";
 
 function TopDisplay() {
+
+    const habitContext = useHabit();
+    const [deltaHeight, setDeltaHeight] = useState(0);
+    const [activities, setActivities] = useState([]);
+    const [recordedToday, setRecordedToday] = useState(false);
+
+    useEffect(() => {
+        setDeltaHeight(habitContext.getDeltaHeight());
+        setActivities(habitContext.getActivities());
+
+        const today = new Date();
+        const today_date = String(today.getDate()).padStart(2, '0')
+
+        for (let i = 0; i < activities.length; i++) { 
+            const activity_date = activities[i].date.slice(8,10);
+            console.log(activity_date, today_date)
+            if (activity_date === today_date) {
+                setRecordedToday(true)
+            }
+          }
+
+    }, [habitContext, activities]);
+
   return (
     <>
         <Link to='/stats'>
@@ -23,8 +48,7 @@ function TopDisplay() {
                 <img className="ball" src={ball} alt={"ball"}/>
             </div>
             <div>
-                <GoalPoint/>
-                <CreateGoal/>
+                {recordedToday ? <GoalPoint /> :<CreateGoal/>}       
             </div>
         </div>
     </>
