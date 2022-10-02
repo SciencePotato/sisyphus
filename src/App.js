@@ -9,6 +9,9 @@ import {HashRouter,Link,Route,Routes} from "react-router-dom";
 import Homepage from './page/homepage/homepage';
 import {useEffect, useState} from 'react';
 
+// Replace with:
+//const { BrowserWindow } = require('@electron/remote')
+
 function App() {
 
   const habitContext = useHabit();
@@ -31,10 +34,11 @@ function App() {
     console.log(habitContext.getProgress());
   }, []);
 
+  
   return (
     <HashRouter>
       <div className="App">
-
+        
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route exact path="/stats" element={<Stats />} />
