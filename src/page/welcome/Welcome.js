@@ -1,7 +1,19 @@
 import './welcome.css'
 import manBall from './../../images/manball_1.png'
+import {useHabit} from "../../components/storage/HabitContext";
+import {useNavigate} from "react-router-dom";
 
 function Welcome() {
+    const habitContext = useHabit();
+    const navigate = useNavigate();
+
+    const changeUserStatus = (e) => {
+        e.preventDefault();
+        habitContext.setHabitData(0, "Learning To Ride A Bike", "Increasing biking proficiency")
+        habitContext.setExistingUserStatus(true);
+        navigate(0);
+    }
+
   return (
     <>
       <div className='welcome-padding'>
@@ -16,7 +28,7 @@ function Welcome() {
                 <p>
                     Sisyphus is a habit-tracking software that focuses on progress. In life, many things are hard to quantify: we never say we completed “guitar” or finished “French.” All we have is gradual improvement each day, and we hope life itself will get better someday.
                 </p>
-                <button> Get Started </button>
+                <button onClick={changeUserStatus}> Get Started </button>
             </div>
         </div>
       </div>

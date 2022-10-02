@@ -31,6 +31,11 @@ const userHabitContext = createContext({
         return total;
     },
 
+    getActivities: function (id = 0) {
+        this.activities = [...store.get(`habit${id}.activities`)];
+        return this.activities;
+    },
+
     setHabitData: function(id = 0, title = "(empty)", description = "(empty)") {
         this.id = id;
         this.date = new Date();
@@ -46,7 +51,6 @@ const userHabitContext = createContext({
 
     addActivity: function (description = "(empty)", title = "(empty)") {
         const activity = {
-            title: title,
             description: description,
             date: new Date(),
             progressVal: Math.random()
@@ -59,7 +63,7 @@ const userHabitContext = createContext({
     isFirstTimeUser: function () {
         if(!store.get("existingUser")) {
             console.log("User is a first time user");
-            store.set("existingUser", true);
+            //store.set("existingUser", true);
             return false;
         }
         else {

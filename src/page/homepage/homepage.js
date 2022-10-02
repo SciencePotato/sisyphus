@@ -10,7 +10,7 @@ const Homepage = () => {
 
   useEffect(() => {
       setIsExisting(habitContext.isFirstTimeUser());
-  })
+  }, []);
 
   return(
     <div>
