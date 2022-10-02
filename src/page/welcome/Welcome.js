@@ -7,7 +7,7 @@ function Welcome() {
       <div className='welcome-padding'>
         <div className="welcome">
           <div>
-              <img src={manBall}></img>
+              <img src={manBall} className="welcome-manball"></img>
           </div>
           <div>
               <div>
