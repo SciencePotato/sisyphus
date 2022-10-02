@@ -1,6 +1,6 @@
 import './record-card.css'
 
-const RecordCard = ({date, title, description}) => {
+const RecordCard = ({date, description}) => {
   //Parse date
   let day = date[0] + date[1]
   let rest_date = date.slice(3)
