@@ -8,7 +8,7 @@
 .welcome-padding {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    
     background-color: var(--contrastColor);
     display: flex;
     flex-wrap: wrap;
@@ -78,21 +78,61 @@
     color: var(--primaryColor);
 }
 
-.aboutUs {
-    width: 40%;
+
+.aboutus {
+    width: 100%;
     text-align: center;
-    margin: 0px;
-    position: relative;
 }
 
-.aboutUs > h2 {
-    width: 90%;
+.aboutus > div {
+    width: 75%;
+    margin: auto;
     text-align: left;
+}
+
+.aboutus > h1 {
+    font-size: 3rem;
+}
+
+.aboutus > div > h2 {
+    font-size: 2rem;
+}
+
+.aboutus > div > p {
+    font-size: 1.5rem;
 }
 
 
 .welcome-manball {
     width: 120%;
+}
+
+.getstarted{
+    display: grid;
+    place-content: center;
+    margin: 5rem 0rem;
+    margin-top: 13rem;
+}
+
+.getstarted > img {
+    margin: auto;
+}
+
+.getstarted > button {
+    margin: 3rem;
+    border-radius: 0.5rem;
+    background-color: var(--primaryColor);
+    color: var(--contrastColor);
+    font-family: 'Langar', cursive;
+    padding: 0.75rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all ease-out 0.25s;
+}
+
+.getstarted > button:hover {
+    color: var(--primaryColor);
+    background-color: var(--contrastColor);
 }
 
 .move-Out{

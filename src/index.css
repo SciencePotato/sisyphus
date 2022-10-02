@@ -4,6 +4,7 @@
     --primaryColor: #000000;
     --contrastColor: #FFFFFF;
     --accentColor: #FF3939;
+    overflow-x: hidden;
 }
 
 ::selection {
