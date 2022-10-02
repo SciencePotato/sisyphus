@@ -19,6 +19,7 @@ function createWindow() {
             webPreferences: {
                 preload: path.join(__dirname, 'preload.js'),
             },
+            frame: true,
         }
     );
 
@@ -64,6 +65,8 @@ app.on('activate', function () {
 // code. You can also put them in separate files and require them here.
 
 const store = new Store();
+
+//store.clear();
 
 // IPC listener
 ipcMain.on('electron-store-get', async (event, val) => {
