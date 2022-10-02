@@ -7,6 +7,7 @@ import Journey from './components/journey';
 import Stats from './page/stats/Stats';
 import {HashRouter,Link,Route,Routes} from "react-router-dom";
 import Homepage from './page/homepage/homepage';
+import { useState, useEffect } from 'react';
 
 function App() {
 
