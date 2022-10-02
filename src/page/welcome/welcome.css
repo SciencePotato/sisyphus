@@ -78,6 +78,19 @@
     color: var(--primaryColor);
 }
 
+.aboutUs {
+    width: 40%;
+    text-align: center;
+    margin: 0px;
+    position: relative;
+}
+
+.aboutUs > h2 {
+    width: 90%;
+    text-align: left;
+}
+
+
 img {
     width: 95%;
 }
