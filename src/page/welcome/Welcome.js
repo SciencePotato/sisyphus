@@ -40,11 +40,16 @@ function Welcome() {
             <h2> This app is powered by: Electron.js; React.js; Redbull </h2>
             <h2> Inspiration: The myth of Sisyphus</h2>
             <p>
-              In Albert Camus’s book the myth of Sisyphus, he compares the human condition with Sisyphus in Greek methology. The god punished Sisyphus to endlessly pushing a rock to the top of a mountain and look at the rock rolling downhill. Yet the Camus believes that we “must imagine Sisyphus happy”. 
+            Sisyphus is a habit tracker that our team made to make us "feel good," inspired by Albert Camus' book "The Myth of Sisyphus." Our team believes enjoyments in life should come from "incremental achievements" instead of "direct result."
+            </p>
+            <p>Sisyphus prompts the user to enter no more than a 100 words each day to record these "incremental achievements". Each day when the user entered something, our lovely Sisyphus will push the rock a little bit further up to the mountain.</p>
+            <p>
+            You will be able to look back on the progress you made. The good stuff (or bad stuff depends on how you do it) you did along the way.
             </p>
             <p>
-              The problem with most of the “habbit-tracker” software is that they focuses too much on goals and deadlines. Yet thats not simply how the world work. We don’t want that.
+            And, most importantly, it is ok to not to enter anything for a while. Our team thought about punishing Sisyphus for being lazy by decreasing the total distance, but that is not fun. The progress you made belongs to you. We wont take it away from you.
             </p>
+
           </div>
         </div>
         <div className='getstarted'>

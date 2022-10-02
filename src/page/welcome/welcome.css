@@ -18,10 +18,12 @@
 
 .welcome{
     max-width: 1200px;
+    height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding-left: 80px;
 }
 
 .welcome > div {
