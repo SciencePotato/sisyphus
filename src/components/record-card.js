@@ -1,9 +1,13 @@
 import './record-card.css'
 
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+
 const RecordCard = ({date, description}) => {
   //Parse date
-  let day = date[0] + date[1]
-  let rest_date = date.slice(3)
+  const day = date.slice(8, 11)
+  const rest_date = date.slice(4, 8) + " " + date.slice(10) 
 
   return (
     <div className="record-card">
