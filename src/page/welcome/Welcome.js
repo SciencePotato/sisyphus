@@ -17,10 +17,10 @@ function Welcome() {
   return (
     <>
       <div className='welcome-padding'>
-      <div className="welcome">
-        <div>
-            <img src={manBall}></img>
-        </div>
+        <div className="welcome">
+          <div>
+              <img src={manBall}></img>
+          </div>
         <div>
             <div>
                 <h1> Sisyphus </h1>
@@ -32,7 +32,6 @@ function Welcome() {
             </div>
         </div>
       </div>
-
       </div>
     </>
   );
