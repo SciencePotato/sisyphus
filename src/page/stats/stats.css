@@ -1,9 +1,43 @@
+:root {
+    --primaryColor: #000000;
+    --contrastColor: #FFFFFF;
+    --accentColor: #FF3939;
+}
+
+.return {
+    margin: 0px;
+    display: grid;
+    place-items: end start;
+    height: 10vh;
+    text-decoration: none;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.return > button {
+    background-color: var(--primaryColor);
+    color: var(--contrastColor);
+    margin-left: 2rem;
+    padding: 0.5rem 2rem;
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all ease-out 0.25s;
+}
+
+.return > button:hover {
+    color: var(--primaryColor);
+    text-decoration: none;
+    background-color: var(--contrastColor);
+}
+
 .stats {
     display: flex;
     flex-wrap: wrap;
     max-width: 1200px;
-    margin: auto;
-    height: 100vh;
+    margin: 0px auto;
+    height: 90vh;
     justify-content: center;
     align-items: center;
 }
@@ -14,7 +48,7 @@
 
 .stats > div {
     flex: 1;
-    padding: 2rem;
+    padding: 0rem 2rem;
     min-width: 500px;
     display: grid;
     place-items: center;

@@ -6,12 +6,30 @@
 }
 
 .clog {
-    padding: 1rem 3rem;
     cursor: pointer;
     margin: auto;
-    max-width: 1200px;
     margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    max-width: 1200px;
 }
+
+.clog > button {
+    color: var(--contrastColor);
+    background-color: var(--primaryColor);
+    font-size: 1.25rem;
+    margin-left: 2.5rem;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all ease-out 0.25s;
+    margin-bottom: 1rem;
+}
+
+.clog > button:hover {
+    background-color: var(--contrastColor);
+    color: var(--primaryColor);
+}
+
 
 .clog > svg {
     transition: all ease-out 0.25s;

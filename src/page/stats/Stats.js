@@ -5,8 +5,14 @@ import { Link } from 'react-router-dom';
 function Stats() {
   return (
     <>
+        <Link to="/">
+            <div className='return'>
+                <button>
+                    Back
+                </button>
+            </div>
+        </Link>
         <div className='stats'>
-            <Link to="/"><p>Go back</p></Link>
             <div>
                 <div>
                     <h2> You already climbed: </h2>
