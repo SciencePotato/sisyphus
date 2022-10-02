@@ -54,6 +54,21 @@ const userHabitContext = createContext({
 
         this.activities = [...this.activities, activity];
         store.set(`habit${this.id}.activities`, this.activities);
+    },
+
+    isFirstTimeUser: function () {
+        if(!store.get("existingUser")) {
+            console.log("User is a first time user");
+            store.set("existingUser", true);
+            return false;
+        }
+        else {
+            return true;
+        }
+    },
+
+    setExistingUserStatus: function (status) {
+        store.set("existingUser", status);
     }
 })
 
