@@ -1,4 +1,4 @@
-import { createContext, useContext, Context } from "react";
+import { createContext, useContext } from "react";
 
 const store = window.electron.store;
 
@@ -8,18 +8,7 @@ const userHabitContext = createContext({
     title: "",
     id: 0,
     activities: [],
-
-    getHabitData: function (id) {
-        const currentHabit = store.get(`habit${id}`);
-
-        this.date = currentHabit.date;
-        this.description = currentHabit.description;
-        this.title = currentHabit.title;
-        this.id = id;
-        this.activities = currentHabit.activities;
-
-        return this;
-    },
+    deltaHeight: 0,
 
     getProgress: function() {
         let total = 0;
@@ -33,12 +22,17 @@ const userHabitContext = createContext({
 
     getActivities: function (id = 0) {
         this.activities = [...store.get(`habit${id}.activities`)];
-        return this.activities;
+        return this.activities.reverse();
+    },
+
+    getDeltaHeight: function () {
+        this.deltaHeight = store.get(`habit${this.id}.deltaHeight`)
+        return this.deltaHeight;
     },
 
     setHabitData: function(id = 0, title = "(empty)", description = "(empty)") {
         this.id = id;
-        this.date = new Date();
+        this.date = new Date().toDateString();
         this.description = description;
         this.title = title;
         this.activities = [];
@@ -47,28 +41,28 @@ const userHabitContext = createContext({
         store.set(`habit${id}.description`, this.description);
         store.set(`habit${id}.id`, this.id);
         store.set(`habit${id}.activities`, this.activities);
+        store.set(`habit${id}.deltaHeight`, this.deltaHeight);
+
+        return this;
     },
 
-    addActivity: function (description = "(empty)", title = "(empty)") {
+    addActivity: function (description = "(empty)") {
         const activity = {
             description: description,
-            date: new Date(),
+            date: new Date().toDateString(),
             progressVal: Math.random()
         }
 
         this.activities = [...this.activities, activity];
         store.set(`habit${this.id}.activities`, this.activities);
+        store.set(`habit${this.id}.deltaHeight`, activity.progressVal);
+        this.deltaHeight = activity.progressVal;
+
+        return activity;
     },
 
     isFirstTimeUser: function () {
-        if(!store.get("existingUser")) {
-            console.log("User is a first time user");
-            //store.set("existingUser", true);
-            return false;
-        }
-        else {
-            return true;
-        }
+        return store.get("existingUser");
     },
 
     setExistingUserStatus: function (status) {

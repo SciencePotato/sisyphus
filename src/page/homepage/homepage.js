@@ -3,8 +3,6 @@ import TopDisplay from "../../components/topDisplay/TopDisplay"
 import {useHabit} from "../../components/storage/HabitContext";
 import {useEffect, useState} from "react";
 import Welcome from "../welcome/Welcome";
-import Loader from "../loader/Loader";
-import {HashRouter, Link, Route, Routes} from "react-router-dom";
 
 const Homepage = () => {
   const habitContext = useHabit();
@@ -12,7 +10,7 @@ const Homepage = () => {
 
   useEffect(() => {
       setIsExisting(habitContext.isFirstTimeUser());
-  }, []);
+  }, [habitContext]);
 
   return(
     <div>

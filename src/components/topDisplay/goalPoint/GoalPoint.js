@@ -1,12 +1,18 @@
 import './GoalPoint.css';
+import {useHabit} from "../../storage/HabitContext";
+import {useEffect, useState} from "react";
 
-function GoalPoint({todayDate, height, deltaHeight}) {
+function GoalPoint() {
+    const habitContext = useHabit();
+    const [deltaHeight, setDeltaHeight] = useState(0);
+
+    useEffect(() => {
+        setDeltaHeight(habitContext.getDeltaHeight());
+    }, [habitContext]);
   return (
     <>
         <div className='goalPoint'>
             <h3>+{deltaHeight.toFixed(3)} ft</h3>
-            <h1>{height.toFixed(3)} ft</h1>
-            <h3>{todayDate}</h3>
         </div>
     </>
   );

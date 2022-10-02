@@ -19,12 +19,12 @@ function TopDisplay() {
         
         <div className="topDisplay">
             <div className='manball'>
-                <img className="man" src={man}/>
-                <img className="ball" src={ball}/>
+                <img className="man" src={man} alt={"man"}/>
+                <img className="ball" src={ball} alt={"ball"}/>
             </div>
             <div>
-                {/* <GoalPoint todayDate="24 Sep 2022" height={21.20347}/> */}
-                <CreateGoal todayDate="24 Sep 2022" height={21.20347}/>
+                <GoalPoint/>
+                <CreateGoal/>
             </div>
         </div>
     </>

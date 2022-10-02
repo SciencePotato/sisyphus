@@ -1,12 +1,15 @@
 import './CreateGoal.css';
 import {useHabit} from "../../storage/HabitContext";
-import {useState} from "react";
-import useRouter, {useNavigate} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
-function CreateGoal({todayDate, height}) {
+function CreateGoal() {
     const habitContext = useHabit();
     const navigate = useNavigate();
+
     const [description, setDescription] = useState("");
+    const [height, setHeight] = useState(0);
+    const [date, setDate] = useState("");
 
     const changeHandler = (e) => {
         e.preventDefault();
@@ -20,19 +23,23 @@ function CreateGoal({todayDate, height}) {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        console.log("submitted!")
         habitContext.addActivity(description, "");
         setDescription("");
         navigate(0);
     }
 
+    useEffect(() => {
+        setHeight(habitContext.getProgress());
+        setDate(new Date().toDateString());
+    }, [habitContext]);
+
   return (
     <>
         <div className='createGoal'>
             <h1>{height.toFixed(3)} ft</h1>
-            <h3>{todayDate}</h3>
+            <h3>{date}</h3>
             <div>
-                <textarea onChange={changeHandler} placeholder='say somethinggggg' id={"description"}></textarea>
+                <textarea onChange={changeHandler} placeholder='Tell Sisyphus About Your Day...' id={"description"}></textarea>
             </div>
             <button onClick={submitHandler}>Record Today</button>
         </div>
