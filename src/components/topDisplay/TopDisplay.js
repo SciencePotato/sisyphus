@@ -14,22 +14,26 @@ function TopDisplay() {
     const [activities, setActivities] = useState([]);
     const [recordedToday, setRecordedToday] = useState(false);
 
+    const setLoginStatus = () => {
+        const today = new Date();
+        const todayDate = String(today.getDate()).padStart(2, '0');
+
+        if(activities.length === 0) {
+            return false;
+        }
+
+        const activityDate = activities[activities.length - 1].date.slice(8, 10);
+
+        return activityDate === todayDate;
+    }
+
     useEffect(() => {
         setDeltaHeight(habitContext.getDeltaHeight());
         setActivities(habitContext.getActivities());
+        setRecordedToday(setLoginStatus());
+        console.log("Recorded today?", recordedToday);
 
-        const today = new Date();
-        const today_date = String(today.getDate()).padStart(2, '0')
-
-        for (let i = 0; i < activities.length; i++) { 
-            const activity_date = activities[i].date.slice(8,10);
-            console.log(activity_date, today_date)
-            if (activity_date === today_date) {
-                setRecordedToday(true)
-            }
-          }
-
-    }, [habitContext, activities]);
+    }, [habitContext]);
 
   return (
     <>
@@ -48,7 +52,7 @@ function TopDisplay() {
                 <img className="ball" src={ball} alt={"ball"}/>
             </div>
             <div>
-                {recordedToday ? <GoalPoint /> :<CreateGoal/>}       
+                {recordedToday ? <GoalPoint /> : <CreateGoal/>}
             </div>
         </div>
     </>

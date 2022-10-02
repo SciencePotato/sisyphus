@@ -67,6 +67,11 @@ const userHabitContext = createContext({
 
     setExistingUserStatus: function (status) {
         store.set("existingUser", status);
+        store.set("userCreationDate", new Date());
+    },
+
+    getUserCreationDate: function () {
+        return store.get("userCreationDate");
     }
 })
 
