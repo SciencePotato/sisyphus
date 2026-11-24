@@ -15,11 +15,10 @@ You will be able to look back on the progress you made. The good stuff (or bad s
 
 And, most importantly, it is ok to not to enter anything for a while. Our team thought about punishing Sisyphus for being lazy by decreasing the total distance, but that is not fun. The progress you made belongs to you. We wont take it away from you.
 
-## Deployment 
-Install all dependency 
-`npm i`
-Deploy application through electron
-`npm start`
-`npm run electron`
-or
-`npm run init`
+## Local development
+
+Install dependencies with `npm install`, then run `npm start`. The start script
+launches the React development server and Electron together.
+
+If the React development server is already running, `npm run electron` launches
+only Electron. There is no `init` script in this repository.
