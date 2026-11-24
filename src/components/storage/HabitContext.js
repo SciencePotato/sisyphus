@@ -77,7 +77,10 @@ const userHabitContext = createContext({
     },
 
     userLoggedInToday: function () {
-        return store.get("loggedInToday");
+        const today = new Date().toDateString();
+        const activities = store.get(`habit${this.id}.activities`) || [];
+        return Boolean(store.get("loggedInToday")) &&
+            activities.some(activity => activity.date === today);
     },
 
     setUserLoggedInToday: function (status) {
