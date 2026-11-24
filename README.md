@@ -1,6 +1,10 @@
 # Sisyphus
 A "progress-emphasized" habit tracker
 
+Daily completion is checked against the local date of saved activities. A
+previous day's completion never prevents a new entry or deletes earlier progress.
+Run `node --test tests/daily-progress.test.cjs` for the offline date-boundary check.
+
 ![Start page (Each time when you open the app)](https://user-images.githubusercontent.com/68682076/193462308-a2ed99f7-1b4f-40c3-947f-43ffb1145432.png)
 
 ## About us
