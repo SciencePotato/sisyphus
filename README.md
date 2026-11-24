@@ -1,6 +1,10 @@
 # Sisyphus
 A "progress-emphasized" habit tracker
 
+Progress totals read saved activities directly, so a child's first render does
+not depend on its parent loading history first. Offline regression:
+`node --test tests/progress-read.test.cjs`.
+
 ![Start page (Each time when you open the app)](https://user-images.githubusercontent.com/68682076/193462308-a2ed99f7-1b4f-40c3-947f-43ffb1145432.png)
 
 ## About us

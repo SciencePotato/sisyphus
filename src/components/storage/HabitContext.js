@@ -12,9 +12,10 @@ const userHabitContext = createContext({
 
     getProgress: function() {
         let total = 0;
+        const activities = store.get(`habit${this.id}.activities`) ?? [];
 
-        for(let i = 0; i < this.activities.length; i++) {
-            total += this.activities[i].progressVal;
+        for(let i = 0; i < activities.length; i++) {
+            total += activities[i].progressVal;
         }
 
         return total;
