@@ -65,8 +65,6 @@ app.on('activate', function () {
 
 const store = new Store();
 
-store.clear();
-
 // IPC listener
 ipcMain.on('electron-store-get', async (event, val) => {
     event.returnValue = store.get(val);

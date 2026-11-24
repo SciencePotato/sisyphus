@@ -16,6 +16,10 @@ You will be able to look back on the progress you made. The good stuff (or bad s
 And, most importantly, it is ok to not to enter anything for a while. Our team thought about punishing Sisyphus for being lazy by decreasing the total distance, but that is not fun. The progress you made belongs to you. We wont take it away from you.
 
 ## Deployment 
+Saved progress is retained when the application starts. Run
+`node --test tests/startup-storage.test.cjs` to check main-process startup and IPC
+storage using an in-memory store, without opening Electron or reading real data.
+
 Install all dependency 
 `npm i`
 Deploy application through electron
