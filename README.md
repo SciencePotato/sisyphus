@@ -23,3 +23,9 @@ Deploy application through electron
 `npm run electron`
 or
 `npm run init`
+
+## Activity history
+
+Activities remain in creation order in storage. History readers receive a
+newest-first copy, so displaying the journey cannot reorder later writes.
+Run `node --test tests/activity-order.test.cjs` for the offline storage regression.

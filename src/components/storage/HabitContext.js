@@ -22,7 +22,7 @@ const userHabitContext = createContext({
 
     getActivities: function (id = 0) {
         this.activities = [...store.get(`habit${id}.activities`)];
-        return this.activities.reverse();
+        return [...this.activities].reverse();
     },
 
     getDeltaHeight: function () {
